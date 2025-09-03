@@ -55,6 +55,17 @@ nav a.active {
   text-align: center;    
 }
 
+.subtitle2 {
+  text-align: center;
+  font-weight: bold;    
+  background-color: #3b82f6;  
+  color: #ffffff;             
+  padding: 0.3rem 0.8rem;   
+  border-radius: 6px;        
+  display: inline-block;      
+  margin: 0.5rem auto 1.5rem; 
+}
+
 /* Liste stili */
 ul {
   list-style-type: disc;        /* normal nokta */
