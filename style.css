@@ -45,6 +45,16 @@ nav a.active {
   cursor: default;
 }
 
+.subtitle {
+  font-size: 1rem;         
+  font-style: italic;      
+  color: #b0b8c4;          
+  margin-top: -0.5rem;     
+  margin-bottom: 1.2rem;   
+  letter-spacing: 0.5px;   
+  text-align: center;    
+}
+
 /* Liste stili */
 ul {
   list-style-type: disc;        /* normal nokta */
