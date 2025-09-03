@@ -1,0 +1,86 @@
+/* Genel sayfa ayarları */
+body {
+  background-color: #151b30;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+}
+
+/* Başlıklar */
+h1 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Navigasyon çubuğu */
+nav {
+  margin: 20px 0;
+}
+
+/* Menü bağlantılarını buton gibi yap */
+nav a {
+  text-decoration: none;
+  color: #242a47;
+  background-color: rgb(234, 238, 251);
+  padding: 12px 20px;
+  margin: 0 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+/* Üzerine gelince rengi değişsin */
+nav a:hover {
+  background-color: #aac4ec;
+}
+
+/* Aktif olan sayfa bağlantısı (tıklanamaz) */
+nav a.active {
+  background-color: #aac4ec;
+  color: 172232;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Liste stili */
+ul {
+  list-style-type: disc;
+  padding-left: 0;
+}
+
+li {
+  font-size: 18px;
+  color: #becfe1;
+  margin: 8px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #e6ebf1;
+  margin-top: -6px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #cad7f4; 
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+
