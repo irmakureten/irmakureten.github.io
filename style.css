@@ -108,19 +108,4 @@ li {
   font-family: 'Poppins', sans-serif;
 }
 
-a {
-  color: #60a5fa;        /* brighter blue (light sky blue) */
-  text-decoration: none; 
-}
-
-a:hover {
-  color: #2563eb;        /* strong vivid blue on hover */
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #7c3aed;        /* softer purple for visited */
-}
-
-
 
