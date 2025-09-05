@@ -15,12 +15,70 @@
   <div class="content">
   <p class="welcome-text">Project #1</p>
   <p class="subtitle">
-    First problem statements 
+    Problem statements 
      <p>
-  <a href="https://codehs.com/sandbox/id/problem-statement-q1-gz1Opv" target="_blank">Problem Statement Q1</a>
-  <a href="https://codehs.com/sandbox/id/problem-statement-q2-iq6h3e" target="_blank">Problem Statement Q2</a>
-  <a href="https://codehs.com/sandbox/id/problem-statement-q3-ywzMGd" target="_blank">Problem Statement Q3</a>
-  <a href="https://codehs.com/sandbox/id/problem-statement-bonus-XNluLj" target="_blank">Problem Statement Bonus</a>
+       <section id="project1">
+  <h2>Project #1: Arithmetic Calculator</h2>
+
+  <h3>Prompt</h3>
+  <p>
+    Write a program that asks the user to enter two numbers. The program should calculate and display:
+    <ul>
+      <li>The sum</li>
+      <li>The difference</li>
+      <li>The product</li>
+      <li>The quotient <em>(if the second number is not zero; otherwise, show a warning)</em></li>
+    </ul>
+  </p>
+  <p>
+    <strong>Example Output:</strong><br>
+    Enter the first number: 12<br>
+    Enter the second number: 5<br>
+    First number: 12.0<br>
+    Second number: 5.0<br>
+    Sum: 17.0<br>
+    Difference: 7.0<br>
+    Product: 60.0<br>
+    Quotient: 2.4
+  </p>
+
+  <h3>Java Code</h3>
+  <pre><code>
+import java.util.Scanner;
+
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the first number: ");
+        double a = scanner.nextDouble();
+
+        System.out.println("Enter the second number: ");
+        double b = scanner.nextDouble();
+
+        double s = a + b;
+        double d = a - b;
+        double p = a * b;
+
+        System.out.println("First number: " + a);
+        System.out.println("Second number: " + b);
+        System.out.println("Sum: " + s);
+        System.out.println("Difference: " + d);
+        System.out.println("Product: " + p);
+
+        if (b == 0)
+            System.out.println("The second number should be something different than zero.");
+        else {
+            double q = a / b;
+            System.out.println("Quotient: " + q);
+        }
+    }
+}
+  </code></pre>
+</section>
+
        
 </body>
 </html>
