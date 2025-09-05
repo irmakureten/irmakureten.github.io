@@ -300,7 +300,7 @@ public class MyProgram {
 
     <section id="exercise5" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
   <h2 style="color: #ffffff;">
-    <span style="color:#cccccc;">Problem</span> <span style="color:#d078ff;">Statement</span> <span style="color:#f78c6b;">Q5 – Princeton 29</span>
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Creative Exercises</span> <span style="color:#f78c6b;">#29</span>
   </h2>
 
   <p>
@@ -360,7 +360,59 @@ public class MyProgram {
     </code></pre>
   </div>
 </section>
+<section id="exercise6" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Creative Exercises</span> <span style="color:#f78c6b;">#25</span>
+  </h2>
 
+  <p>
+    🧊 <strong>Objective:</strong><br>
+    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the wind chill based on user input.<br>
+    The program should ask for:<br>
+    - <strong>Temperature (°F)</strong> — must be ≤ 50<br>
+    - <strong>Wind Speed (mph)</strong> — must be between 3 and 120<br>
+    <br>
+    It uses the formula:<br>
+    <code style="color:#dcdcaa;">w = 35.74 + 0.6215·t + (0.4275·t − 35.75)·v<sup>0.16</sup></code>
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Test input:</strong><br>
+    Temperature: 40<br>
+    Wind speed: 10<br>
+    <strong style="color:#dcdcaa;">Expected output:</strong><br>
+    Wind chill: ~33.45°F
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class WindChillCalculator {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter temperature (°F): ");
+        double t = scanner.nextDouble();
+        if (Math.abs(t) > 50) {
+            System.out.println("Temperature must be ≤ 50°F in magnitude.");
+            return;
+        }
+        System.out.print("Enter wind speed (mph): ");
+        double v = scanner.nextDouble();
+        if (v < 3 || v > 120) {
+            System.out.println("Wind speed must be between 3 and 120 mph.");
+            return;
+        }
+        double w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
+        System.out.printf("Wind chill: %.2f°F\n", w);
+    }
+}
+    </code></pre>
+  </div>
+</section>
 
 </body>
 </html>
