@@ -185,3 +185,8 @@ body {
   background-color: #333;
   border-left: 4px solid #00bfff;
 }
+
+.main-content {
+  margin-left: 240px; /* slightly more than sidebar width */
+  padding: 20px;
+}
