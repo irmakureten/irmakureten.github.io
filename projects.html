@@ -545,6 +545,64 @@ public class BMI {
   </div>
 </section>
 
-    
+<section id="exercisew26" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#26</span>
+  </h2>
+
+  <p>
+    🌌 <strong>Objective:</strong><br>
+    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the distance from the center of the more massive body to the barycenter in a two-body orbital system.
+  </p>
+
+  <p style="color:#b5cea8;">
+    📌 <strong>Formula:</strong><br>
+    <code>r₁ = (a × m₂) / (m₁ + m₂)</code><br>
+    where:
+    <ul style="color:#b5cea8;">
+      <li><strong>m₁:</strong> Mass of first (more massive) body</li>
+      <li><strong>m₂:</strong> Mass of second body</li>
+      <li><strong>a:</strong> Distance between them (in km)</li>
+    </ul>
+    <br>
+    <strong>Determine</strong> whether the barycenter lies inside the first body (by comparing <code>r₁</code> to radius <code>R₁</code>).
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class Barycenter {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter mass of first body (m1): ");
+        double m1 = input.nextDouble();
+
+        System.out.print("Enter mass of second body (m2): ");
+        double m2 = input.nextDouble();
+
+        System.out.print("Enter distance between the two bodies (a): ");
+        double a = input.nextDouble();
+
+        System.out.print("Enter radius of first body (R1): ");
+        double R1 = input.nextDouble();
+
+        double r1 = (a * m2) / (m1 + m2);
+
+        System.out.printf("Barycenter distance from center of first body: %.2f km%n", r1);
+
+        if (r1 < R1) {
+            System.out.println("The barycenter lies within the first body.");
+        } else {
+            System.out.println("The barycenter lies outside the first body.");
+        }
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
 </body>
 </html>
