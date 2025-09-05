@@ -130,22 +130,26 @@ body {
 
 .code-box {
   float: left;
-  width: 48%;
+  width: 95%; /* or increase to e.g. 90% if inside container */
+  max-width: 100%;
   background-color: #1e1e1e;
   color: #dcdcdc;
   padding: 15px;
   border-radius: 6px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
-  overflow-x: auto;
-  white-space: pre-wrap;
+  overflow-x: auto;         /* allow horizontal scrolling */
+  white-space: pre;         /* prevent line wrap */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
+  margin-bottom: 30px;      /* add spacing below */
 }
+
 .code-box pre,
 .code-box code {
-  text-align: left; 
-  display: block;        
+  text-align: left;
+  display: block;
   margin: 0;
   padding: 0;
+  white-space: pre; /* ensure same behavior inside code */
 }
