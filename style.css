@@ -151,37 +151,60 @@ body {
   white-space: pre;  /* PRESERVE FORMATTING */
 }
 
+/* Reset list style */
 .project-list {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin-top: 10px;
-}
-
-.project-list li {
-  background-color: #252526;
-  color: #ffffff;
-  margin-bottom: 12px;
-  padding: 12px 20px;
-  border-radius: 6px;
+  margin: 2em 0;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-size: 1em;
 }
 
-.project-list li:hover {
-  background-color: #373737;
-}
-
+/* Project item links */
 .project-list li a {
-  color: #9cdcfe;
+  display: block;
+  padding: 0.6em 1.2em;
+  margin: 0.5em auto;
+  width: fit-content;
+  color: #b5cea8; /* pastel green like Java text */
+  background-color: transparent;
+  border-left: 4px solid #b5cea8;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
-.project-list li a:hover {
-  text-decoration: underline;
+/* Hover and focus styles */
+.project-list li a:hover,
+.project-list li a:focus {
+  color: #f78c6b; /* pastel orange */
+  border-left: 4px solid #f78c6b;
+  background-color: rgba(255, 165, 0, 0.1); /* soft orange tint */
 }
+
+/* Optional: keep look clean on click */
+.project-list li a:active {
+  transform: translateX(2px);
+}
+
+/* Prevent visited purple */
+.project-list li a:visited {
+  color: #b5cea8;
+}
+
 
 .main-content {
   margin-left: 240px; /* slightly more than sidebar width */
   padding: 20px;
+}
+
+.project-list li a:focus {
+  outline: none;
+}
+
+.project-list li a:active {
+  background-color: #2e2e2e;
+}
+
+.project-list li a:visited {
+  color: #9cdcfe; /* Same as normal to prevent purple links */
 }
