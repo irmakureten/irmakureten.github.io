@@ -107,13 +107,3 @@ li {
   line-height: 1.6;
   font-family: 'Poppins', sans-serif;
 }
-
-pre {
-  background-color: #1e1e1e;
-  color: #dcdcdc;
-  padding: 1em;
-  overflow-x: auto;
-  border-radius: 5px;
-  font-family: 'Courier New', monospace;
-}
-
