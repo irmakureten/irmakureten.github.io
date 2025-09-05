@@ -165,20 +165,31 @@ body {
   padding: 0.5em 1em;
   margin: 0.4em auto;
   width: fit-content;
-  color: inherit; /* Keeps your current color theme */
-  background-color: inherit;
-  border-left: 4px solid transparent;
+  color: #d078ff; /* violet like "Statement" */
+  background-color: transparent;
+  border-left: 4px solid #cccccc; /* soft gray like "Problem" */
   font-weight: bold;
   text-decoration: none;
   transition: all 0.25s ease-in-out;
 }
 
+/* Hover = pastel orange */
 .project-list li a:hover,
 .project-list li a:focus {
-  border-left-color: inherit;
-  background-color: inherit;
+  color: #f78c6b; /* pastel orange like "Q1" */
+  border-left-color: #f78c6b;
+  background-color: rgba(247, 140, 107, 0.1); /* soft orange tint */
 }
 
+/* Prevent "stuck" look */
+.project-list li a:active {
+  transform: translateX(2px);
+}
+
+/* Avoid purple links */
+.project-list li a:visited {
+  color: #d078ff;
+}
 
 .main-content {
   margin-left: 240px; /* slightly more than sidebar width */
