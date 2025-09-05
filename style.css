@@ -151,44 +151,32 @@ body {
   white-space: pre;  /* PRESERVE FORMATTING */
 }
 
-/* Reset list style */
 .project-list {
   list-style: none;
   padding: 0;
   margin: 2em 0;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1em;
+  font-size: 18px;
+  text-align: left;
 }
 
-/* Project item links */
 .project-list li a {
   display: block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em auto;
+  padding: 0.5em 1em;
+  margin: 0.4em auto;
   width: fit-content;
-  color: #b5cea8; /* pastel green like Java text */
-  background-color: transparent;
-  border-left: 4px solid #b5cea8;
+  color: inherit; /* Keeps your current color theme */
+  background-color: inherit;
+  border-left: 4px solid transparent;
+  font-weight: bold;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
-/* Hover and focus styles */
 .project-list li a:hover,
 .project-list li a:focus {
-  color: #f78c6b; /* pastel orange */
-  border-left: 4px solid #f78c6b;
-  background-color: rgba(255, 165, 0, 0.1); /* soft orange tint */
-}
-
-/* Optional: keep look clean on click */
-.project-list li a:active {
-  transform: translateX(2px);
-}
-
-/* Prevent visited purple */
-.project-list li a:visited {
-  color: #b5cea8;
+  border-left-color: inherit;
+  background-color: inherit;
 }
 
 
