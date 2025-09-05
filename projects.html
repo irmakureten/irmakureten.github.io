@@ -166,5 +166,201 @@ public class MyProgram
   </pre>
 </section>
 
+   <section id="exercise3" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Problem</span> <span style="color:#d078ff;">Statement</span> <span style="color:#f78c6b;">Q3</span>
+  </h2>
+
+  <p>
+    🖥️ <strong>Objective:</strong><br>
+    A rocket is launched vertically from Earth.<br>
+    The user enters the rocket’s <strong>mass</strong> (kg), <strong>engine force</strong> (N), and <strong>burn time</strong> (s).<br>
+    The program should calculate and display:<br>
+    - Net acceleration = F / m<br>
+    - Final velocity = a × t<br>
+    - Altitude = 0.5 × a × t × t<br>
+    Display both decimal and integer values.<br>
+    End with a rocket ASCII art. 🚀
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Test data:</strong><br>
+    <span style="color:#ce9178;">Enter rocket mass (kg):</span> 1000<br>
+    <span style="color:#ce9178;">Enter engine force (N):</span> 20000<br>
+    <span style="color:#ce9178;">Enter burn time (s):</span> 10<br>
+    <strong style="color:#dcdcaa;">Expected output:</strong><br>
+    Net acceleration (m/s²): 20.0<br>
+    Net acceleration (int): 20<br>
+    Final velocity (m/s): 200.0<br>
+    Final velocity (int): 200<br>
+    Altitude reached (m): 1000.0<br>
+    Altitude (int): 1000
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+public class MyProgram {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter rocket mass (kg): ");
+        int mass = scanner.nextInt();
+        System.out.println("Enter engine force (N): ");
+        int force = scanner.nextInt();
+        System.out.println("Enter burn time (s): ");
+        int burn = scanner.nextInt();
+
+        int a = force / mass;
+        double acc = force / mass;
+
+        int v = a * burn;
+        double vel = acc * burn;
+
+        int alt = (a * burn * burn) / 2;
+        double altitude = 0.5 * acc * burn * burn;
+
+        System.out.println("Net acceleration (m/s^2): " + acc);
+        System.out.println("Net acceleration (int): " + a);
+        System.out.println("Final velocity (m/s): " + vel);
+        System.out.println("Final velocity (int): " + v);
+        System.out.println("Altitude reached (m): " + altitude);
+        System.out.println("Altitude reached (int): " + alt);
+
+        System.out.println("  /\\  ");
+        System.out.println(" /  \\ ");
+        System.out.println(" |==| ");
+        System.out.println(" |  |");
+        System.out.println("/____\\");
+        System.out.println("  /\\  ");
+        System.out.println("  **  ");
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+  <section id="exercise4" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Problem</span> <span style="color:#d078ff;">Statement</span> <span style="color:#f78c6b;">Q4 – Bonus Challenge</span>
+  </h2>
+
+  <p>
+    🧠 <strong>Objective:</strong><br>
+    Without using <code>Math.sqrt</code>, compute the square root of a number <code>N</code> using Newton’s Method.<br>
+    Manually compute 3 iterations using:<br>
+    <code>xₖ₊₁ = 1/2 * (xₖ + N / xₖ)</code><br>
+    Start with <code>x₀ = N / 2</code>.<br>
+    Display the approximation after 3 steps in decimal and integer form.
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Test data:</strong><br>
+    <span style="color:#ce9178;">Enter N:</span> 200<br><br>
+    <strong style="color:#dcdcaa;">Expected output:</strong><br>
+    Initial guess x₀ = 100.0<br>
+    x₁ = 55.0<br>
+    x₂ = 30.909090909090907<br>
+    x₃ = 18.654434250764525<br>
+    Approx sqrt(N) ≈ 18.654434250764525<br>
+    Approx sqrt(N) (int) = 18
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter N: ");
+        double N = scanner.nextDouble();
+
+        double x0 = N / 2.0;
+
+        double x1 = 0.5 * (x0 + N / x0);
+        double x2 = 0.5 * (x1 + N / x1);
+        double x3 = 0.5 * (x2 + N / x2);
+
+        System.out.println("Initial guess x0 = " + x0);
+        System.out.println("x1 = " + x1);
+        System.out.println("x2 = " + x2);
+        System.out.println("x3 = " + x3);
+        System.out.println("Approx sqrt(N) ≈ " + x3);
+        System.out.println("Approx sqrt(N) (int) = " + (int)x3);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+    <section id="exercise5" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Problem</span> <span style="color:#d078ff;">Statement</span> <span style="color:#f78c6b;">Q5 – Princeton 29</span>
+  </h2>
+
+  <p>
+    📆 <strong>Objective:</strong><br>
+    Write a program <code>DayOfWeek.java</code> that takes a date as input and prints the day of the week it falls on.<br>
+    Input: <code>month</code>, <code>day</code>, <code>year</code> (as integers).<br>
+    Output: Integer 0–6, where:<br>
+    <code>0 = Sunday, 1 = Monday, ..., 6 = Saturday</code><br><br>
+
+    Use this formula (Zeller's Congruence variant):<br>
+    <code>y0 = y − (14 − m) / 12</code><br>
+    <code>x = y0 + y0 / 4 − y0 / 100 + y0 / 400</code><br>
+    <code>m0 = m + 12 × ((14 − m) / 12) − 2</code><br>
+    <code>d0 = (d + x + 31 × m0 / 12) mod 7</code>
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Sample Input:</strong><br>
+    Month: 9<br>
+    Day: 5<br>
+    Year: 2025<br><br>
+    <strong style="color:#dcdcaa;">Expected output:</strong><br>
+    <code>5</code> → Friday
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Which month (use 1 for January, 2 for February, etc.): ");
+        int m = scanner.nextInt();
+        
+        if (m > 12) {
+            System.out.println("There are no months after 12.");
+            System.exit(0); 
+        }
+
+        System.out.println("Which day: ");
+        int d = scanner.nextInt();
+        System.out.println("Which year: ");
+        int y = scanner.nextInt();
+
+        double y0 = y - (14 - m) / 12;
+        double x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+        double m0 = m + 12 * ((14 - m) / 12) - 2;
+        double d0 = (d + x + 31 * m0 / 12) % 7;
+        int weekday = (int) d0;
+
+        System.out.println(weekday);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+
 </body>
 </html>
