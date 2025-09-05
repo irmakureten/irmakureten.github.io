@@ -17,36 +17,12 @@
   <p class="subtitle">
     Problem statements 
      <p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Talya's Java Projects</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main>
+    <!-- Project #1 -->
+    <section class="project-section">
 
-    <!-- Project 1 -->
-    <section class="project">
-      <div class="prompt-block">
-        <h2>Problem 1: Basic Math Operations</h2>
-        <p>
-          Write a program that asks the user to enter two numbers.<br>
-          The program should calculate and display:<br>
-          – The sum<br>
-          – The difference<br>
-          – The product<br>
-          – The quotient (if the second number is not zero; otherwise, show a warning)<br><br>
-          Sample Output:<br>
-          Enter the first number: 12<br>
-          Enter the second number: 5<br>
-          Sum: 17.0 | Difference: 7.0 | Product: 60.0 | Quotient: 2.4
-        </p>
-      </div>
-      <div class="code-block">
-        <pre><code>
+      <!-- Code (left side) -->
+      <div class="code-box">
+<pre>
 import java.util.Scanner;
 public class MyProgram {
     public static void main(String[] args) {
@@ -54,6 +30,7 @@ public class MyProgram {
 
         System.out.println("Enter the first number: ");
         double a = scanner.nextDouble();
+
         System.out.println("Enter the second number: ");
         double b = scanner.nextDouble();
 
@@ -67,179 +44,45 @@ public class MyProgram {
         System.out.println("Sum: " + s);
         System.out.println("Difference: " + d);
         System.out.println("Product: " + p);
-        
+
         if (b == 0)
             System.out.println("The second number should be something different than zero.");
         else
             System.out.println("Quotient: " + q);
     }
 }
-        </code></pre>
+</pre>
       </div>
-    </section>
 
-    <!-- Project 2 -->
-    <section class="project">
-      <div class="prompt-block">
-        <h2>Problem 2: Ice Cream Sales Tracker</h2>
+      <!-- Prompt (right side) -->
+      <div class="prompt-box">
+        <h2>Problem 1: Basic Math Operations</h2>
         <p>
-          You are running a small ice cream shop.<br>
-          The program asks the user to enter sales for Chocolate, Vanilla, and Strawberry for three days.<br>
-          It calculates:<br>
-          – Total and average sales<br>
-          – Average as decimal and integer<br>
-          – Performance grade (no if-else)<br>
-          Bonus: ASCII ice cream art!
+          Write a program that asks the user to enter two numbers.<br>
+          The program should calculate and display:
         </p>
+        <ul>
+          <li>The sum</li>
+          <li>The difference</li>
+          <li>The product</li>
+          <li>The quotient (if the second number is not zero; otherwise, show a warning)</li>
+        </ul>
+        <p><strong>Sample Output:</strong></p>
+        <pre>
+Enter the first number: 12
+Enter the second number: 5
+First number: 12.0
+Second number: 5.0
+Sum: 17.0
+Difference: 7.0
+Product: 60.0
+Quotient: 2.4
+        </pre>
       </div>
-      <div class="code-block">
-        <pre><code>
-import java.util.Scanner;
-public class MyProgram {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        // [input omitted for brevity]
 
-        double total = c1 + c2 + c3 + v1 + v2 + v3 + s1 + s2 + s3;
-        double avg = total / 3;
-
-        // [output omitted for brevity]
-
-        while (avg >= 100) {
-            System.out.println("Performance grade: A");
-            break;
-        }
-        while (avg >= 70) {
-            System.out.println("Performance grade: B");
-            break;
-        }
-        while (avg >= 50) {
-            System.out.println("Performance grade: C");
-            break;
-        }
-    }
-}
-        </code></pre>
-      </div>
     </section>
 
-    <!-- Project 3 -->
-    <section class="project">
-      <div class="prompt-block">
-        <h2>Problem 3: Rocket to the Stars</h2>
-        <p>
-          A rocket is launched vertically from Earth.<br>
-          The user enters the rocket’s mass (kg), engine force (N), and burn time (s).<br>
-          The program calculates:<br>
-          – Net acceleration = F / m<br>
-          – Final velocity = a * t<br>
-          – Altitude = 0.5 * a * t * t<br>
-          It displays both decimal and integer (cast) values.<br>
-          Bonus: ASCII rocket!
-        </p>
-      </div>
-      <div class="code-block">
-        <pre><code>
-import java.util.Scanner;
-public class MyProgram {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        int mass = scanner.nextInt();
-        int force = scanner.nextInt();
-        int burn = scanner.nextInt();
+  </div>
 
-        int a = force / mass;
-        double acc = (double) force / mass;
-        double vel = acc * burn;
-        double alt = 0.5 * acc * burn * burn;
-
-        System.out.println("Acceleration: " + acc);
-        System.out.println("Velocity: " + vel);
-        System.out.println("Altitude: " + alt);
-
-        System.out.println("  /\\  ");
-        System.out.println(" /  \\ ");
-        System.out.println(" |==| ");
-        System.out.println(" |  | ");
-        System.out.println("/____\\");
-        System.out.println("  **  ");
-    }
-}
-        </code></pre>
-      </div>
-    </section>
-
-    <!-- Project 4 -->
-    <section class="project">
-      <div class="prompt-block">
-        <h2>Bonus Challenge: Newton’s Square Root</h2>
-        <p>
-          Without using <code>Math.sqrt</code>, compute the square root of a number N using Newton’s method:<br>
-          - Start with x₀ = N / 2<br>
-          - Compute x₁, x₂, and x₃ using:<br>
-          <code>x(k+1) = 1/2 * (x(k) + N / x(k))</code><br>
-          - No loops or conditionals<br>
-          Show decimal and integer result.
-        </p>
-      </div>
-      <div class="code-block">
-        <pre><code>
-import java.util.Scanner;
-public class MyProgram {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        double N = scanner.nextDouble();
-
-        double x0 = N / 2.0;
-        double x1 = 0.5 * (x0 + N / x0);
-        double x2 = 0.5 * (x1 + N / x1);
-        double x3 = 0.5 * (x2 + N / x2);
-
-        System.out.println("Approximate sqrt(N): " + x3);
-        System.out.println("As integer: " + (int)x3);
-    }
-}
-        </code></pre>
-      </div>
-    </section>
-
-    <!-- Project 5 -->
-    <section class="project">
-      <div class="prompt-block">
-        <h2>Princeton 29: Day of the Week Calculator</h2>
-        <p>
-          Write a program that takes a date (month, day, year) and prints the day of the week (0 = Sun, ..., 6 = Sat).<br>
-          Use:<br>
-          <code>y0 = y − (14 − m) / 12</code><br>
-          <code>x = y0 + y0 / 4 − y0 / 100 + y0 / 400</code><br>
-          <code>m0 = m + 12 * ((14 − m) / 12) − 2</code><br>
-          <code>d0 = (d + x + 31 * m0 / 12) % 7</code>
-        </p>
-      </div>
-      <div class="code-block">
-        <pre><code>
-import java.util.Scanner;
-public class MyProgram {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int m = scanner.nextInt();
-        int d = scanner.nextInt();
-        int y = scanner.nextInt();
-
-        double y0 = y - (14 - m) / 12;
-        double x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
-        double m0 = m + 12 * ((14 - m) / 12) - 2;
-        double d0 = (d + x + 31 * m0 / 12) % 7;
-
-        System.out.println((int) d0);
-    }
-}
-        </code></pre>
-      </div>
-    </section>
-
-  </main>
 </body>
 </html>
