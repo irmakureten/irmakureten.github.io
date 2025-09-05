@@ -75,15 +75,15 @@ nav a.active {
 ul {
   list-style-type: disc;        /* normal nokta */
   list-style-position: inside;  /* nokta uzakta degil yaninda */
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0.4rem;
+  padding: 0.4rem;
 }
 
 
 li {
   font-size: 18px;
   color: #becfe1;
-  margin: 8px 0;
+  margin: 4px 0;
 }
 
 .subtitle {
