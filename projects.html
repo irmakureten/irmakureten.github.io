@@ -414,5 +414,137 @@ public class WindChillCalculator {
   </div>
 </section>
 
+<section id="exercise19" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#19</span>
+  </h2>
+
+  <p>
+    🔢 <strong>Objective:</strong><br>
+    Write a <span style="color:#9cdcfe;">Java program</span> that checks if two integers are both divisible by <strong>7</strong>.<br>
+    Use <code style="color:#dcdcaa;">% operator</code> to check divisibility.
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Sample Input:</strong><br>
+    a = 14<br>
+    b = 21<br>
+    <strong style="color:#dcdcaa;">Expected output:</strong><br>
+    true
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class Divisibility {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
+
+        boolean bothDivisible = (a % 7 == 0) && (b % 7 == 0);
+        System.out.println(bothDivisible);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<section id="exercise20" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#20</span>
+  </h2>
+
+  <p>
+    📐 <strong>Objective:</strong><br>
+    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the <strong>area of a triangle</strong> from its three sides using <strong>Heron’s formula</strong>:<br>
+    <code style="color:#dcdcaa;">area = √[s(s-a)(s-b)(s-c)]</code> where <code style="color:#dcdcaa;">s = (a + b + c) / 2</code>
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Sample Input:</strong><br>
+    a = 5, b = 6, c = 7<br>
+    <strong style="color:#dcdcaa;">Expected Output:</strong><br>
+    Area ≈ 14.70
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class TriangleArea {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter side a: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Enter side b: ");
+        double b = scanner.nextDouble();
+
+        System.out.print("Enter side c: ");
+        double c = scanner.nextDouble();
+
+        double s = (a + b + c) / 2;
+        double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+        System.out.printf("Area of triangle: %.2f\n", area);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<section id="exercise22" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#22</span>
+  </h2>
+
+  <p>
+    ⚖️ <strong>Objective:</strong><br>
+    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the <strong>Body Mass Index (BMI)</strong> of a user using:<br>
+    <code style="color:#dcdcaa;">BMI = weight / (height × height)</code><br>
+    where weight is in kilograms and height is in meters.
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Sample Input:</strong><br>
+    Weight: 70 kg<br>
+    Height: 1.75 m<br>
+    <strong style="color:#dcdcaa;">Expected Output:</strong><br>
+    BMI: 22.86
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class BMI {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter weight (kg): ");
+        double weight = scanner.nextDouble();
+
+        System.out.print("Enter height (m): ");
+        double height = scanner.nextDouble();
+
+        double bmi = weight / (height * height);
+        System.out.println("BMI: %.2 ", bmi);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+    
 </body>
 </html>
