@@ -156,7 +156,7 @@ body {
   padding: 0;
   margin: 2em 0;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 16px; /* Slightly smaller */
+  font-size: 16px;
   text-align: left;
 }
 
@@ -165,32 +165,34 @@ body {
   padding: 0.5em 1em;
   margin: 0.4em auto;
   width: fit-content;
-  color: #d078ff; /* Violet like "Statement" */
+  color: #d078ff !important;  /* ✅ force violet */
   background-color: transparent;
-  border-left: 4px solid #cccccc; /* Soft gray like "Problem" */
+  border-left: 4px solid #cccccc;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.25s ease-in-out;
 }
 
+/* Hover effect - pastel orange */
 .project-list li a:hover,
 .project-list li a:focus {
-  color: #f78c6b; /* Pastel orange like "Q1" */
+  color: #f78c6b;
   border-left-color: #f78c6b;
   background-color: rgba(247, 140, 107, 0.1);
 }
 
-/* Prevent stuck look */
+/* Prevent "stuck" look */
 .project-list li a:active {
   transform: translateX(2px);
   background-color: #2e2e2e;
 }
 
-/* Keep visited links the same color as default */
+/* ✅ Force visited links to look exactly like normal */
 .project-list li a:visited {
-  color: #d078ff; /* match default */
+  color: #d078ff !important;
 }
 
+/* Remove blue outlines */
 .project-list li a:focus {
   outline: none;
 }
