@@ -138,4 +138,10 @@ body {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
 }
-
+.code-box pre,
+.code-box code {
+  text-align: left; 
+  display: block;        
+  margin: 0;
+  padding: 0;
+}
