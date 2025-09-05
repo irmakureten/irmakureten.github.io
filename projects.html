@@ -17,57 +17,49 @@
   <p class="subtitle">
     Problem statements 
      <p>
-    <!-- Project #1 -->
-    <section class="project-section">
-
-      <!-- Code (left side) -->
+    <!-- Project 1 -->
+    <div class="project-section">
       <div class="code-box">
-<pre>
-import java.util.Scanner;
+<pre><code>import java.util.Scanner;
 public class MyProgram {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the first number: ");
-        double a = scanner.nextDouble();
+    System.out.println("Enter the first number: ");
+    double a = scanner.nextDouble();
+    System.out.println("Enter the second number: ");
+    double b = scanner.nextDouble();
 
-        System.out.println("Enter the second number: ");
-        double b = scanner.nextDouble();
+    double s = a + b;
+    double d = a - b;
+    double p = a * b;
+    double q = a / b;
 
-        double s = a + b;
-        double d = a - b;
-        double p = a * b;
-        double q = a / b;
+    System.out.println("First number: " + a);
+    System.out.println("Second number: " + b);
+    System.out.println("Sum: " + s);
+    System.out.println("Difference: " + d);
+    System.out.println("Product: " + p);
 
-        System.out.println("First number: " + a);
-        System.out.println("Second number: " + b);
-        System.out.println("Sum: " + s);
-        System.out.println("Difference: " + d);
-        System.out.println("Product: " + p);
-
-        if (b == 0)
-            System.out.println("The second number should be something different than zero.");
-        else
-            System.out.println("Quotient: " + q);
-    }
+    if (b == 0)
+      System.out.println("The second number should be something different than zero.");
+    else
+      System.out.println("Quotient: " + q);
+  }
 }
-</pre>
+</code></pre>
       </div>
-
-      <!-- Prompt (right side) -->
       <div class="prompt-box">
         <h2>Problem 1: Basic Math Operations</h2>
-        <p>
-          Write a program that asks the user to enter two numbers.<br>
-          The program should calculate and display:
-        </p>
+        <p>Write a program that asks the user to enter two numbers.<br>
+        The program should calculate and display:</p>
         <ul>
           <li>The sum</li>
           <li>The difference</li>
           <li>The product</li>
           <li>The quotient (if the second number is not zero; otherwise, show a warning)</li>
         </ul>
-        <p><strong>Sample Output:</strong></p>
+        <h3>Sample Output:</h3>
         <pre>
 Enter the first number: 12
 Enter the second number: 5
@@ -79,10 +71,183 @@ Product: 60.0
 Quotient: 2.4
         </pre>
       </div>
+    </div>
 
-    </section>
+    <!-- Project 2 -->
+    <div class="project-section">
+      <div class="code-box">
+<pre><code>import java.util.Scanner;
+public class MyProgram {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    int c1 = scanner.nextInt(), v1 = scanner.nextInt(), s1 = scanner.nextInt();
+    int c2 = scanner.nextInt(), v2 = scanner.nextInt(), s2 = scanner.nextInt();
+    int c3 = scanner.nextInt(), v3 = scanner.nextInt(), s3 = scanner.nextInt();
+
+    double total = c1 + v1 + s1 + c2 + v2 + s2 + c3 + v3 + s3;
+    int totalInt = (int) total;
+    double avg = total / 3;
+    int avgInt = totalInt / 3;
+
+    System.out.println("Total sales: " + total);
+    System.out.println("Average sales (decimal): " + avg);
+    System.out.println("Average sales (integer): " + avgInt);
+
+    if (avg >= 100) System.out.println("Performance Grade: A");
+    else if (avg >= 70) System.out.println("Performance Grade: B");
+    else if (avg >= 50) System.out.println("Performance Grade: C");
+  }
+}
+</code></pre>
+      </div>
+      <div class="prompt-box">
+        <h2>Problem 2: Ice Cream Sales Tracker</h2>
+        <p>You're running an ice cream shop. Get 3-day sales for 3 flavors and calculate:</p>
+        <ul>
+          <li>Total sales</li>
+          <li>Average sales (decimal + integer)</li>
+          <li>Performance grade (A/B/C) — no if-else chains</li>
+        </ul>
+        <h3>Sample Output:</h3>
+        <pre>
+Day 1 - Chocolate: 30
+Day 2 - Vanilla: 30
+Day 3 - Strawberry: 30
+Total sales: 300.0
+Average sales (decimal): 100.0
+Average sales (integer): 100
+Performance Grade: A
+        </pre>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-section">
+      <div class="code-box">
+<pre><code>import java.util.Scanner;
+public class MyProgram {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    int mass = scanner.nextInt();
+    int force = scanner.nextInt();
+    int burn = scanner.nextInt();
+
+    double a = (double) force / mass;
+    double v = a * burn;
+    double alt = 0.5 * a * burn * burn;
+
+    System.out.println("Net acceleration: " + a);
+    System.out.println("Final velocity: " + v);
+    System.out.println("Altitude reached: " + alt);
+
+    System.out.println("  /\\  ");
+    System.out.println(" /  \\ ");
+    System.out.println(" |==| ");
+    System.out.println("/____\\");
+  }
+}
+</code></pre>
+      </div>
+      <div class="prompt-box">
+        <h2>Problem 3: Rocket to the Stars</h2>
+        <p>The user enters rocket mass (kg), engine force (N), and burn time (s). Calculate:</p>
+        <ul>
+          <li>Acceleration</li>
+          <li>Final velocity</li>
+          <li>Altitude</li>
+        </ul>
+        <h3>Sample Output:</h3>
+        <pre>
+Enter rocket mass (kg): 1000
+Enter engine force (N): 20000
+Enter burn time (s): 10
+
+Net acceleration (m/s²): 20.0
+Final velocity: 200.0
+Altitude: 1000.0
+        </pre>
+      </div>
+    </div>
+
+    <!-- Project 4: Newton’s Method -->
+    <div class="project-section">
+      <div class="code-box">
+<pre><code>import java.util.Scanner;
+public class MyProgram {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    double N = scanner.nextDouble();
+    double x0 = N / 2.0;
+    double x1 = 0.5 * (x0 + N / x0);
+    double x2 = 0.5 * (x1 + N / x1);
+    double x3 = 0.5 * (x2 + N / x2);
+
+    System.out.println("x0 = " + x0);
+    System.out.println("x1 = " + x1);
+    System.out.println("x2 = " + x2);
+    System.out.println("x3 = " + x3);
+    System.out.println("Approximate sqrt: " + x3);
+  }
+}
+</code></pre>
+      </div>
+      <div class="prompt-box">
+        <h2>Bonus Challenge: Square Root (Newton's Method)</h2>
+        <p>Compute square root using Newton’s method with 3 unrolled steps (no loops):</p>
+        <h3>Sample Output:</h3>
+        <pre>
+Enter N: 200
+x0 = 100.0
+x1 = 55.0
+x2 = 30.9
+x3 = 18.65
+Approx sqrt(N) ≈ 18.65
+        </pre>
+      </div>
+    </div>
+
+    <!-- Project 5: Princeton 29 -->
+    <div class="project-section">
+      <div class="code-box">
+<pre><code>import java.util.Scanner;
+public class MyProgram {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    int m = scanner.nextInt();
+    int d = scanner.nextInt();
+    int y = scanner.nextInt();
+
+    int y0 = y - (14 - m) / 12;
+    int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+    int m0 = m + 12 * ((14 - m) / 12) - 2;
+    int d0 = (d + x + (31 * m0) / 12) % 7;
+
+    System.out.println("Day of week (0=Sun,...6=Sat): " + d0);
+  }
+}
+</code></pre>
+      </div>
+      <div class="prompt-box">
+        <h2>Problem 5: Day of the Week (Princeton 29)</h2>
+        <p>Enter a date and compute which day of the week it is using integer math.</p>
+        <code>0 = Sunday, 1 = Monday, ..., 6 = Saturday</code>
+        <h3>Sample Output:</h3>
+        <pre>
+Enter month: 9
+Enter day: 5
+Enter year: 2025
+Output: 5 → Friday
+        </pre>
+      </div>
+    </div>
 
   </div>
+</body>
+</html>
 
 </body>
 </html>
