@@ -2,7 +2,6 @@
 body {
   background-color: #151b30;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
   margin: 0;
   padding: 30px;
 }
@@ -12,6 +11,7 @@ h1 {
   font-size: 36px;
   color: #ffffff;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Navigasyon çubuğu */
@@ -30,6 +30,7 @@ nav a {
   font-weight: bold;
   transition: background-color 0.3s ease;
   display: inline-block;
+  text-align: center;
 }
 
 /* Üzerine gelince rengi değişsin */
@@ -43,6 +44,7 @@ nav a.active {
   color: 172232;
   pointer-events: none;
   cursor: default;
+  text-align: center;
 }
 
 .subtitle {
