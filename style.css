@@ -17,6 +17,7 @@ h1 {
 /* Navigasyon çubuğu */
 nav {
   margin: 20px 0;
+  text-align: center;
 }
 
 /* Menü bağlantılarını buton gibi yap */
@@ -36,6 +37,7 @@ nav a {
 /* Üzerine gelince rengi değişsin */
 nav a:hover {
   background-color: #aac4ec;
+  text-align: center;
 }
 
 /* Aktif olan sayfa bağlantısı (tıklanamaz) */
@@ -54,11 +56,11 @@ nav a.active {
   margin-top: -0.5rem;     
   margin-bottom: 1.2rem;   
   letter-spacing: 0.5px;   
-  text-align: center;    
+  text-align: left;    
 }
 
 .subtitle2 {
-  text-align: center;
+  text-align: left;
   font-weight: bold;    
   background-color: #93C5FD;  
   color: #ffffff;             
@@ -73,8 +75,8 @@ nav a.active {
 ul {
   list-style-type: disc;        /* normal nokta */
   list-style-position: inside;  /* nokta uzakta degil yaninda */
-  margin: 0;
-  padding: 0;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 
@@ -97,7 +99,7 @@ li {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .welcome-text {
