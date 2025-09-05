@@ -17,7 +17,7 @@
   <p class="subtitle">
     Problem statements 
      <p>
-  <section id="exercise3" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
+  <section id="exercise1" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
   <h2 style="color: #ffffff;">
     <span style="color:#cccccc;">Problem</span> <span style="color:#d078ff;">Statement</span> <span style="color:#f78c6b;">Q1</span>
   </h2>
@@ -54,6 +54,110 @@ public class ProductCalculator {
         int product = num1 * num2;
 
         System.out.println(num1 + " × " + num2 + " = " + product);
+    }
+}
+  </code></pre>
+</div>
+
+  </pre>
+</section>
+
+ <p>
+  <section id="exercise2" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Problem Statement</span> <span style="color:#d078ff;">Q2</span> <span style="color:#f78c6b;">Ice Cream Sales Tracker</span>
+  </h2>
+
+  <p>
+    🖥️ <strong>Objective:</strong><br>
+    Create a <span style="color:#9cdcfe;">Java program</span> that 
+    1- Asks the user to enter the number of ice creams sold for <span style="color:#4ec9b0;">Chocolate, Vanilla, and Strawberry</span>  for three days.
+    2- Calculates the  <span style="color:#4ec9b0;">total sales</span>  and the  <span style="color:#4ec9b0;">average sales</span>  (decimal and integer using casting).
+    3- Gives the shop’s  <span style="color:#4ec9b0;">performance grade</span>  (no if-else).
+  </p>
+
+  <p style="color:#b5cea8;">
+    <strong>Sample Output:</strong><br>
+    <span style="color:#ce9178;">Day 1 - Chocolate sales:</span> 30<br>
+    <span style="color:#ce9178;">Day 1 - Vanilla sales:</span> 25<br>
+    <span style="color:#ce9178;">Day 1 - Strawberry sales:</span> 20<br>
+    <span style="color:#ce9178;">Day 2 - Chocolate sales:</span> 40<br>
+    <span style="color:#ce9178;">Day 2 - Vanilla sales:</span> 30<br>
+    <span style="color:#ce9178;">Day 2 - Strawberry sales:</span> 35<br>
+    <span style="color:#ce9178;">Day 3 - Chocolate sales:</span> 50<br>
+    <span style="color:#ce9178;">Day 3 - Vanilla sales:</span> 40<br>
+    <span style="color:#ce9178;">Day 3 - Strawberry sales:</span> 30<br>
+    <strong style="color:#dcdcaa;">Total sales:</strong>
+    <span style="color:#ffffff;">300.0</span><br>
+    <strong style="color:#dcdcaa;">Average sales (decimal):</strong>
+    <span style="color:#ffffff;">100.0</span><br>
+    <strong style="color:#dcdcaa;">Average sales (integer):</strong>
+    <span style="color:#ffffff;">100</span><br>
+    <strong style="color:#dcdcaa;">Performance Grade:</strong>
+    <span style="color:#ffffff;">A</span><br>
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <pre style="background-color:#252526; color:#d4d4d4; padding: 1em; border-radius: 8px; overflow-x: auto;">
+<div class="code-box">
+  <pre><code>
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("What is the number of Chocolate ice creams sold on day 1? ");
+        int c1 = scanner.nextInt();
+        System.out.println("What is the number of Vanilla ice creams sold on day 1? ");
+        int v1 = scanner.nextInt();
+        System.out.println("What is the number of Strawberry ice creams sold on day 1? ");
+        int s1 = scanner.nextInt();
+        System.out.println("What is the number of Chocolate ice creams sold on day 2? ");
+        int c2 = scanner.nextInt();
+        System.out.println("What is the number of Vanilla ice creams sold on day 2? ");
+        int v2 = scanner.nextInt();
+        System.out.println("What is the number of Strawberry ice creams sold on day 2? ");
+        int s2 = scanner.nextInt();
+        System.out.println("What is the number of Chocolate ice creams sold on day 3? ");
+        int c3 = scanner.nextInt();
+        System.out.println("What is the number of Vanilla ice creams sold on day 3? ");
+        int v3 = scanner.nextInt();
+        System.out.println("What is the number of Strawberry ice creams sold on day 3? ");
+        int s3 = scanner.nextInt();
+        
+        double total= c1+c2+c3+v1+v2+v3+s1+s2+s3;
+        int totali= c1+c2+c3+v1+v2+v3+s1+s2+s3;
+        double avg= total/3;
+        int aveg= totali/3;
+        
+        System.out.println("Day 1 - Chocolate sales: " + c1);
+        System.out.println("Day 1 - Vanilla sales: " + v1);
+        System.out.println("Day 1 - Strawberry sales: " + s1);
+        System.out.println("Day 2 - Chocolate sales: " + c2);
+        System.out.println("Day 2 - Vanilla sales: " + v2);
+        System.out.println("Day 2 - Strawberry sales: " + s2);
+        System.out.println("Day 3 - Chocolate sales: " + c3);
+        System.out.println("Day 3 - Vanilla sales: " + v3);
+        System.out.println("Day 3 - Strawberry sales: " + s3);
+        System.out.println("Total sales: " + total);
+        System.out.println("Average sales (decimal): " + avg);
+        System.out.println("Average sales (integer): " + aveg);
+        
+        while (avg >= 100) {
+            System.out.println("Performance grade: A");
+            break;
+        }
+        while (100> avg && avg >= 70){
+            System.out.println("Performance grade: B");
+            break;
+        }
+        while (70> avg && avg >= 50){
+            System.out.println("Performance grade: C");
+            break;
+        }
     }
 }
   </code></pre>
