@@ -150,3 +150,38 @@ body {
   padding: 0;
   white-space: pre;  /* PRESERVE FORMATTING */
 }
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 220px;
+  background-color: #111;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #333;
+  border-left: 4px solid #00bfff;
+}
