@@ -67,15 +67,6 @@
        void: method does not return anything.<br>
        main: entry point of java.<br>
        <p> 
-     <ul>
-    <li>Skill #2 </li>
-  </ul>
-      <p class="subtitle2">
-       API
-       <p>      
-     <p class="subtitle">
-       Application Programming ınterface. Provides documentation that explains what hose libraries do and how to call the methods or actions. It is like an instruction manual.
-       <p> 
          <ul>
     <li>1.5-1.9</li>
   </ul>
@@ -89,15 +80,18 @@
        In order to have input from user you have to "Scanner in=new Scanner(System.in);"
        <p>  
          <ul>
-    <li>1.3 (codehs) </li>
+      <li>1.3 (codehs) </li>
+    </ul>
       <p class="subtitle2">
        Literals and Escape Sequences
        <p> 
       <p class="subtitle">
          A literal is a fixed value, a constant. <br>Using "\" in order to add punctuation marks to the written output<br>
         Example: System.out.println("She said \"Hey!\"");<br>She said "Hey!"<br>\n = new line <br> \t = tab
-         <p>  
-    <li>1.4 (codehs) </li>
+         <p> 
+          <ul>
+      <li>1.4 (codehs) </li>
+    </ul>
       <p class="subtitle2">
        Errors
        <p> 
@@ -109,9 +103,65 @@
        Objectss and Calling Methods
        <p> 
       <p class="subtitle">
-         Use scanner to get input.
+         Use scanner to get input. Here is an example of using scanner:
          <p> 
-           
-  </ul>
+       <h3 style="color:#d078ff;">Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class BMI {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter weight (kg): ");
+        double weight = scanner.nextDouble();
+
+        System.out.print("Enter height (m): ");
+        double height = scanner.nextDouble();
+
+        double bmi = weight / (height * height);
+        System.out.println("BMI: ", bmi);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+          <ul>
+        <li>1.5) Casting (codehs) </li>
+       </ul>
+      <p class="subtitle2">
+       Widening
+       <p> 
+      <p class="subtitle">
+       Converting an integer to a double.
+       <p> 
+      <p class="subtitle2">
+       Narrowing
+       <p> 
+      <p class="subtitle">
+       Converting a double to an integer. Note: even is the double is 9.9, norrowing converts it into 9 not 10. 
+        Rounding can be made by (+0.5) while converting.
+       <p> 
+         <ul>
+        <li>1.7) API & Libraries </li>
+       </ul>
+       <p class="subtitle">
+       java.lang = already uploaded libraries ( String, math, system, runtime ) <br>
+         java.util = the libraries you upload ( Scanner, tandom, ArrayList, HashMap) <br>
+         Java package = a collection of related classes grouped together.
+       <p> 
+        <p class="subtitle2">
+       API
+       <p>      
+     <p class="subtitle">
+       Application Programming ınterface. Provides documentation that explains what hose libraries do and how to call the methods or actions. It is like an instruction manual.
+       <p> 
+         <ul>
+        <li>1.8) (codehs) </li>
+       </ul>
+      <ul>
+        <li>1.9) Method Signatures (codehs) </li>
+       </ul>
 </body>
 </html>
