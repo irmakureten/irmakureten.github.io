@@ -73,8 +73,8 @@ nav a.active {
 
 /* Liste stili */
 ul {
-  list-style-type: disc;        /* normal nokta */
-  list-style-position: inside;  /* nokta uzakta degil yaninda */
+  list-style-type: disc;        
+  list-style-position: inside; 
   margin: 0.4rem;
   padding: 0.4rem;
 }
@@ -136,7 +136,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
   overflow-x: auto;
-  white-space: pre; /* VERY IMPORTANT */
+  white-space: pre; 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
   tab-size: 4;
@@ -148,7 +148,7 @@ body {
   display: block;
   margin: 0;
   padding: 0;
-  white-space: pre;  /* PRESERVE FORMATTING */
+  white-space: pre;  
 }
 
 .project-list {
@@ -165,7 +165,7 @@ body {
   padding: 0.5em 1em;
   margin: 0.4em auto;
   width: fit-content;
-  color: #d078ff !important;  /* ✅ force violet */
+  color: #d078ff !important; 
   background-color: transparent;
   border-left: 4px solid #cccccc;
   font-weight: bold;
@@ -192,7 +192,6 @@ body {
   color: #d078ff !important;
 }
 
-/* Remove blue outlines */
 .project-list li a:focus {
   outline: none;
 }
