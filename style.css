@@ -131,8 +131,8 @@ body {
 .code-box {
   background-color: #1e1e1e;
   color: #dcdcdc;
-  padding: 15px;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 4px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
   overflow-x: auto;
