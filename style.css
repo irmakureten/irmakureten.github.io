@@ -200,3 +200,14 @@ body {
   margin-left: 240px;
   padding: 20px;
 }
+
+.course-link {
+  color: #d078ff;   /* pick your color */
+  display: block;   /* makes indent cleaner */
+  margin-left: 2em; /* acts like a "tab" */
+  text-decoration: none; /* remove underline if you want */
+}
+
+.course-link:hover {
+  color: #f78c6b; /* hover color */
+}
