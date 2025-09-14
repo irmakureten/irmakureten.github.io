@@ -163,5 +163,208 @@ public class BMI {
       <ul>
         <li>1.9) Method Signatures (codehs) </li>
        </ul>
+    <!-- ===================== CSAwesome Notes — Unit 1 ===================== -->
+    <p class="welcome-text">CSAwesome Notes — Unit 1</p>
+    <ul>
+      <li>Getting started with Java, variables, primitive types, expressions, input, and basic APIs.</li>
+    </ul>
+
+    <!-- Table of contents -->
+    <p class="subtitle2">Contents</p>
+    <ul>
+      <li><a class="course-link" href="#u1-hello">Minimal program</a></li>
+      <li><a class="course-link" href="#u1-types">Primitive types &amp; Strings</a></li>
+      <li><a class="course-link" href="#u1-expr">Expressions &amp; precedence</a></li>
+      <li><a class="course-link" href="#u1-assign">Assignment, compound ops, ++/--</a></li>
+      <li><a class="course-link" href="#u1-casting">Type conversion (casting)</a></li>
+      <li><a class="course-link" href="#u1-input">Input with <code>Scanner</code></a></li>
+      <li><a class="course-link" href="#u1-errors">Common errors</a></li>
+      <li><a class="course-link" href="#u1-charts">Quick charts</a></li>
+      <li><a class="course-link" href="#u1-drills">Mini-drills</a></li>
+    </ul>
+
+    <!-- 0. Minimal -->
+    <p id="u1-hello" class="subtitle2">Minimal program</p>
+    <p class="subtitle">
+      Your smallest Java file uses a public class named like the file and a <code>main</code> method as the entry point.
+    </p>
+    <div class="code-box"><pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("hi");
+    }
+}</code></pre></div>
+
+    <!-- 1. Types -->
+    <p id="u1-types" class="subtitle2">Primitive types &amp; Strings</p>
+    <p class="subtitle">
+      Java primitives: <b>int</b> (32-bit), <b>double</b> (64-bit), <b>boolean</b> (true/false), <b>char</b> (16-bit).
+      <b>String</b> is a class (sequence of characters).
+    </p>
+    <div class="code-box"><pre><code>int count = 0;
+double price = 19.99;
+boolean ok = true;
+char grade = 'A';
+String name = "Ada";
+System.out.println("Hello " + name);</code></pre></div>
+
+    <!-- 2. Expressions -->
+    <p id="u1-expr" class="subtitle2">Expressions &amp; precedence</p>
+    <p class="subtitle">
+      Precedence: <code>()</code> &gt; <code>* / %</code> &gt; <code>+ -</code>. Integer division truncates; one double operand makes the whole expression double.
+    </p>
+    <div class="code-box"><pre><code>int a = 7, b = 3;
+System.out.println(a / b);    // 2  (int division)
+System.out.println(a / 3.0);  // 2.3333333333333335
+System.out.println("Total: " + 5 + 3);   // "Total: 53"
+System.out.println("Total: " + (5 + 3)); // "Total: 8"</code></pre></div>
+
+    <!-- 3. Assignment & ++/-- -->
+    <p id="u1-assign" class="subtitle2">Assignment, compound ops, ++/--</p>
+    <p class="subtitle">
+      These are equivalent: <code>a = a + 1;</code> • <code>a += 1;</code> • <code>a++;</code><br>
+      Prefix vs postfix matters only when used inside an expression or print.
+    </p>
+    <div class="code-box"><pre><code>int x = 5;
+x += 3;      // 8
+System.out.println(x++); // prints 8, then x becomes 9
+System.out.println(++x); // x becomes 10, then prints 10</code></pre></div>
+
+    <!-- 4. Casting -->
+    <p id="u1-casting" class="subtitle2">Type conversion (casting)</p>
+    <p class="subtitle">
+      Widening (e.g., <code>int→double</code>) is automatic. Narrowing (<code>double→int</code>) needs an explicit cast and drops the fraction.
+      Cast the <i>whole expression</i> when you convert.
+    </p>
+    <div class="code-box"><pre><code>double y = 2.9;
+int k = (int) y;           // 2  (truncation)
+
+int total = 284;
+// WRONG: loses fraction first, then casts → 94.0
+double avgWrong = (double)(total / 3);
+// RIGHT: cast before division → 94.666...
+double avgRight = (double) total / 3;
+
+// "lossy conversion" fix: cast the result or use double destination
+int i = (int)(2 * 2.2);    // 4
+double dx = 2 * 2.2;       // 4.4</code></pre></div>
+
+    <!-- 5. Input -->
+    <p id="u1-input" class="subtitle2">Input with <code>Scanner</code></p>
+    <p class="subtitle">
+      Import, construct with <code>System.in</code>, then call typed methods like <code>nextInt()</code>, <code>nextDouble()</code>.
+    </p>
+    <div class="code-box"><pre><code>import java.util.Scanner;
+
+public class BMI {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter weight (kg): ");
+        double weight = scanner.nextDouble();
+
+        System.out.print("Enter height (m): ");
+        double height = scanner.nextDouble();
+
+        double bmi = weight / (height * height);
+        System.out.println("BMI: " + bmi);
+    }
+}</code></pre></div>
+
+    <!-- 6. Common errors -->
+    <p id="u1-errors" class="subtitle2">Common errors</p>
+    <ul>
+      <li><b>Syntax error</b> — violates language rules (e.g., missing semicolon).</li>
+      <li><b>Logic error</b> — code compiles but behavior is wrong (e.g., integer division when you wanted decimal).</li>
+      <li><b>Run-time error</b> — occurs while executing (e.g., input mismatch).</li>
+      <li><b>Incompatible types / lossy conversion</b> — assigning double to int without a cast.</li>
+      <li><b>Variable might not have been initialized</b> — using a local variable before assignment.</li>
+    </ul>
+
+    <!-- 7. Charts -->
+    <p id="u1-charts" class="subtitle2">Quick charts</p>
+    <p class="subtitle">Visual cheatsheets (inline SVG; no extra CSS needed).</p>
+
+    <!-- Chart A: Bits by primitive type -->
+    <figure>
+      <svg class="chart" viewBox="0 0 660 180" role="img" aria-label="Bits by primitive type">
+        <rect x="0" y="0" width="660" height="180" fill="#141a2e" rx="12"></rect>
+        <text x="20" y="28" fill="#cad7f4" font-size="16">Primitive sizes (relative)</text>
+
+        <!-- axis -->
+        <line x1="140" y1="40" x2="620" y2="40" stroke="#2b3358" stroke-width="2"></line>
+        <line x1="140" y1="80" x2="620" y2="80" stroke="#2b3358" stroke-width="2"></line>
+        <line x1="140" y1="120" x2="620" y2="120" stroke="#2b3358" stroke-width="2"></line>
+        <line x1="140" y1="160" x2="620" y2="160" stroke="#2b3358" stroke-width="2"></line>
+
+        <!-- labels -->
+        <text x="20" y="52" fill="#e6ebf1" font-size="14">double (64-bit)</text>
+        <text x="20" y="92" fill="#e6ebf1" font-size="14">int (32-bit)</text>
+        <text x="20" y="132" fill="#e6ebf1" font-size="14">char (16-bit)</text>
+        <text x="20" y="172" fill="#e6ebf1" font-size="14">boolean (1-bit*)</text>
+
+        <!-- bars (widths proportional: 64→440px, 32→220px, 16→110px, 1→7px) -->
+        <rect x="140" y="46" width="440" height="18" fill="#93C5FD" rx="4"></rect>
+        <rect x="140" y="86" width="220" height="18" fill="#d078ff" rx="4"></rect>
+        <rect x="140" y="126" width="110" height="18" fill="#f78c6b" rx="4"></rect>
+        <rect x="140" y="166" width="7"   height="18" fill="#9ad29a" rx="4"></rect>
+
+        <text x="590" y="28" fill="#8aa2d7" font-size="12">* conceptual</text>
+      </svg>
+      <figcaption class="caption">Relative storage sizes of common primitives.</figcaption>
+    </figure>
+
+    <!-- Chart B: Frequent pitfalls (sample counts) -->
+    <figure>
+      <svg class="chart" viewBox="0 0 660 230" role="img" aria-label="Pitfall frequency">
+        <rect x="0" y="0" width="660" height="230" fill="#141a2e" rx="12"></rect>
+        <text x="20" y="28" fill="#cad7f4" font-size="16">Frequent pitfalls (sample)</text>
+
+        <!-- bars -->
+        <text x="20" y="70"  fill="#e6ebf1" font-size="14">Integer division</text>
+        <rect x="180" y="58" width="330" height="18" fill="#93C5FD" rx="4"></rect>
+        <text x="520" y="72" fill="#bcc6de" font-size="12">33</text>
+
+        <text x="20" y="110" fill="#e6ebf1" font-size="14">Lossy conversion</text>
+        <rect x="180" y="98" width="260" height="18" fill="#d078ff" rx="4"></rect>
+        <text x="450" y="112" fill="#bcc6de" font-size="12">26</text>
+
+        <text x="20" y="150" fill="#e6ebf1" font-size="14">Using == for doubles</text>
+        <rect x="180" y="138" width="210" height="18" fill="#f78c6b" rx="4"></rect>
+        <text x="400" y="152" fill="#bcc6de" font-size="12">21</text>
+
+        <text x="20" y="190" fill="#e6ebf1" font-size="14">Uninitialized local</text>
+        <rect x="180" y="178" width="170" height="18" fill="#9ad29a" rx="4"></rect>
+        <text x="370" y="192" fill="#bcc6de" font-size="12">17</text>
+      </svg>
+      <figcaption class="caption">Illustrative counts to remind what to watch for.</figcaption>
+    </figure>
+
+    <!-- 8. Mini-drills -->
+    <p id="u1-drills" class="subtitle2">Mini-drills</p>
+    <p class="subtitle">Copy, run, and predict outputs before you execute.</p>
+    <div class="code-box"><pre><code>// 1) Integer vs double division
+int p = 5, q = 2;
+System.out.println(p / q);         // ?
+System.out.println(p / (double)q); // ?
+
+// 2) Precedence sanity
+System.out.println(2 + 3 * 4);     // ?
+System.out.println((2 + 3) * 4);   // ?
+
+// 3) Safe average
+int s1 = 87, s2 = 92, s3 = 70;
+double avg = (s1 + s2 + s3) / 3.0;
+System.out.printf("avg=%.2f%n", avg);
+
+// 4) Overflow demo
+System.out.println(Integer.MAX_VALUE + 1); // ?</code></pre></div>
+
+    <!-- Footer note -->
+    <p class="subtitle">Next: control flow (<code>if/else</code>, boolean logic, and input validation).</p>
+
+  </div><!-- /content -->
+</body>
+</html>
+
 </body>
 </html>
