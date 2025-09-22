@@ -478,22 +478,133 @@ public class Divisibility {
   </div>
 </section>
 
-<section id="exercise8" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <!-- ======= Q17 ======= -->
+<section id="exercise17" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#17</span>
+  </h2>
+
+  <p>
+    🧮 <strong>Objective:</strong><br>
+    Read real-valued parameters <code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code> and print the <strong>Euclidean distance</strong> between the points
+    <code>(x1, y1)</code> and <code>(x2, y2)</code>. Use <code>Math.sqrt()</code>.
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first parameter for x: ");
+        int x1 = scanner.nextInt();
+        System.out.print("Enter first parameter for y: ");
+        int y1 = scanner.nextInt();
+        System.out.print("Enter second parameter for x: ");
+        int x2 = scanner.nextInt();
+        System.out.print("Enter second parameter for y: ");
+        int y2 = scanner.nextInt();
+
+        int q = (x2 - x1) * (x2 - x1);
+        int p = (y2 - y1) * (y2 - y1);
+        int a = q + p;
+        double euclideanD = Math.sqrt(a);
+
+        System.out.println(euclideanD);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<!-- ======= Q18 ======= -->
+<section id="exercise18" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#18</span>
+  </h2>
+
+  <p>
+    🔢 <strong>Objective:</strong><br>
+    Read three integers <code>x</code>, <code>y</code>, <code>z</code>. Create boolean <code>b</code> that is <strong>true</strong> if the values are strictly
+    <em>ascending</em> or <em>descending</em>, otherwise <strong>false</strong>. Print <code>b</code>.
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter first number: ");
+        int x = scanner.nextInt();
+        System.out.println("Enter second number: ");
+        int y = scanner.nextInt();
+        System.out.println("Enter third number: ");
+        int z = scanner.nextInt();
+
+        boolean b;
+        if ((x > y && y > z) || (x < y && y < z))
+            b = true;
+        else
+            b = false;
+
+        System.out.println(b);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<!-- ======= Q19 ======= -->
+<section id="exercise19" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#19</span>
+  </h2>
+
+  <p>
+    ✅ <strong>Objective:</strong><br>
+    Read two integers and print <strong>true</strong> if both are divisible by <code>7</code>, else <strong>false</strong>.
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class Divisibility {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
+
+        boolean bothDivisible = (a % 7 == 0) && (b % 7 == 0);
+        System.out.println(bothDivisible);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<!-- ======= Q20 ======= -->
+<section id="exercise20" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
   <h2 style="color: #ffffff;">
     <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#20</span>
   </h2>
 
   <p>
     📐 <strong>Objective:</strong><br>
-    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the <strong>area of a triangle</strong> from its three sides using <strong>Heron’s formula</strong>:<br>
-    <code style="color:#dcdcaa;">area = √[s(s-a)(s-b)(s-c)]</code> where <code style="color:#dcdcaa;">s = (a + b + c) / 2</code>
-  </p>
-
-  <p style="color:#b5cea8;">
-    <strong>Sample Input:</strong><br>
-    a = 5, b = 6, c = 7<br>
-    <strong style="color:#dcdcaa;">Expected Output:</strong><br>
-    Area ≈ 14.70
+    Compute the <strong>area of a triangle</strong> given side lengths <code>a</code>, <code>b</code>, <code>c</code> using <strong>Heron’s formula</strong>:
+    <code>s = (a + b + c) / 2</code>, <code>area = sqrt(s(s-a)(s-b)(s-c))</code>.
   </p>
 
   <h3 style="color:#d078ff;">💡 Java Code</h3>
@@ -514,34 +625,72 @@ public class TriangleArea {
         System.out.print("Enter side c: ");
         double c = scanner.nextDouble();
 
-        double s = (a + b + c) / 2;
+        double s = (a + b + c) / 2.0;
         double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
 
-        System.out.println("Area of triangle: ", area);
+        System.out.println("Area of triangle: " + area);
     }
 }
     </code></pre>
   </div>
 </section>
 
-<section id="exercise9" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+<!-- ======= Q21 ======= -->
+<section id="exercise21" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Creative Exercises</span> <span style="color:#f78c6b;">#21</span>
+  </h2>
+
+  <p>
+    🌠 <strong>Objective:</strong><br>
+    Convert <strong>equatorial</strong> coordinates (declination <code>δ</code>, hour angle <code>H</code>, latitude <code>φ</code>) to
+    <strong>horizontal</strong> coordinates (Altitude, Azimuth) using:<br>
+    <code>Altitude = asin( sin φ sin δ + cos φ cos δ cos H )</code><br>
+    <code>Azimuth  = acos( (cos φ sin δ − sin φ cos δ cos H) / cos(Altitude) )</code><br>
+    (Use radians for Java trig functions.)
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter declination δ (radians): ");
+        double dec = scanner.nextDouble();
+        System.out.println("Enter hour angle H (radians): ");
+        double angle = scanner.nextDouble();
+        System.out.println("Enter latitude φ (radians): ");
+        double lat = scanner.nextDouble();
+
+        double altitude = Math.asin(Math.sin(lat) * Math.sin(dec) +
+                                    Math.cos(lat) * Math.cos(dec) * Math.cos(angle));
+
+        double azimuth  = Math.acos((Math.cos(lat) * Math.sin(dec) -
+                                     Math.sin(lat) * Math.cos(dec) * Math.cos(angle)) /
+                                     Math.cos(altitude));
+
+        System.out.println("Position in horizontal coordinates:");
+        System.out.print(altitude + ", ");
+        System.out.print(azimuth);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<!-- ======= Q22 ======= -->
+<section id="exercise22" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
   <h2 style="color: #ffffff;">
     <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#22</span>
   </h2>
 
   <p>
     ⚖️ <strong>Objective:</strong><br>
-    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the <strong>Body Mass Index (BMI)</strong> of a user using:<br>
-    <code style="color:#dcdcaa;">BMI = weight / (height × height)</code><br>
-    where weight is in kilograms and height is in meters.
-  </p>
-
-  <p style="color:#b5cea8;">
-    <strong>Sample Input:</strong><br>
-    Weight: 70 kg<br>
-    Height: 1.75 m<br>
-    <strong style="color:#dcdcaa;">Expected Output:</strong><br>
-    BMI: 22.86
+    Compute <strong>BMI</strong> given <code>weight</code> (kg) and <code>height</code> (m): <code>BMI = weight / (height * height)</code>.
   </p>
 
   <h3 style="color:#d078ff;">💡 Java Code</h3>
@@ -560,34 +709,22 @@ public class BMI {
         double height = scanner.nextDouble();
 
         double bmi = weight / (height * height);
-        System.out.println("BMI: ", bmi);
+        System.out.println("BMI: " + bmi);
     }
 }
     </code></pre>
   </div>
 </section>
 
-<section id="exercise10" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+    <section id="exercise25" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
   <h2 style="color: #ffffff;">
-    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#26</span>
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Creative Exercises</span> <span style="color:#f78c6b;">#25</span>
   </h2>
 
   <p>
-    🌌 <strong>Objective:</strong><br>
-    Write a <span style="color:#9cdcfe;">Java program</span> that calculates the distance from the center of the more massive body to the barycenter in a two-body orbital system.
-  </p>
-
-  <p style="color:#b5cea8;">
-    📌 <strong>Formula:</strong><br>
-    <code>r₁ = (a × m₂) / (m₁ + m₂)</code><br>
-    where:
-    <ul style="color:#b5cea8;">
-      <li><strong>m₁:</strong> Mass of first (more massive) body</li>
-      <li><strong>m₂:</strong> Mass of second body</li>
-      <li><strong>a:</strong> Distance between them (in km)</li>
-    </ul>
-    <br>
-    <strong>Determine</strong> whether the barycenter lies inside the first body (by comparing <code>r₁</code> to radius <code>R₁</code>).
+    🧊 <strong>Objective:</strong><br>
+    Compute wind chill given temperature <code>t</code> (°F, |t| ≤ 50) and wind speed <code>v</code> (mph, 3–120):<br>
+    <code>w = 35.74 + 0.6215·t + (0.4275·t − 35.75)·v^0.16</code>
   </p>
 
   <h3 style="color:#d078ff;">💡 Java Code</h3>
@@ -595,36 +732,147 @@ public class BMI {
     <pre><code>
 import java.util.Scanner;
 
-public class Barycenter {
+public class WindChillCalculator {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter mass of first body (m1): ");
-        double m1 = input.nextDouble();
-
-        System.out.print("Enter mass of second body (m2): ");
-        double m2 = input.nextDouble();
-
-        System.out.print("Enter distance between the two bodies (a): ");
-        double a = input.nextDouble();
-
-        System.out.print("Enter radius of first body (R1): ");
-        double R1 = input.nextDouble();
-
-        double r1 = (a * m2) / (m1 + m2);
-
-        System.out.printf("Barycenter distance from center of first body: %.2f km%n", r1);
-
-        if (r1 < R1) {
-            System.out.println("The barycenter lies within the first body.");
-        } else {
-            System.out.println("The barycenter lies outside the first body.");
+        System.out.print("Enter temperature (°F): ");
+        double t = scanner.nextDouble();
+        if (Math.abs(t) > 50) {
+            System.out.println("Temperature must be ≤ 50°F in magnitude.");
+            return;
         }
+        System.out.print("Enter wind speed (mph): ");
+        double v = scanner.nextDouble();
+        if (v < 3 || v > 120) {
+            System.out.println("Wind speed must be between 3 and 120 mph.");
+            return;
+        }
+
+        double w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
+        System.out.printf("Wind chill: %.2f°F%n", w);
     }
 }
     </code></pre>
   </div>
 </section>
+
+  <section id="exercise27" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#27</span>
+  </h2>
+
+  <p>
+    🧮 <strong>Objective:</strong><br>
+    For <code>x^3 + b x^2 + c x + d</code>, compute the discriminant:<br>
+    <code>b^2 c^2 − 4 c^3 − 4 b^3 d − 27 d^2 + 18 b c d</code>.
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("x^3 + b x^2 + c x + d");
+        System.out.print("Enter b: ");
+        int b = scanner.nextInt();
+        System.out.print("Enter c: ");
+        int c = scanner.nextInt();
+        System.out.print("Enter d: ");
+        int d = scanner.nextInt();
+
+        double discriminant = b*b*c*c - 4*c*c*c - 4*b*b*b*d - 27*d*d + 18*b*c*d;
+        System.out.println(discriminant);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+  <section id="exercise28" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Web Exercises</span> <span style="color:#f78c6b;">#28</span>
+  </h2>
+
+  <p>
+    🌌 <strong>Objective:</strong><br>
+    Given masses <code>m1</code>, <code>m2</code> and separation <code>a</code>, compute distance from the center of the more massive body to the barycenter:<br>
+    <code>r1 = a · m2 / (m1 + m2)</code>.
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter m1 (earth-masses): ");
+        double m1 = in.nextDouble();
+
+        System.out.print("Enter m2 (earth-masses): ");
+        double m2 = in.nextDouble();
+
+        System.out.print("Enter a (km): ");
+        double a = in.nextDouble();
+
+        double r1 = a * m2 / (m1 + m2);
+        System.out.println(r1);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+  <section id="exercise31" style="background-color: #1a1a1a; color: #e0e0e0; padding: 2em; font-family: monospace; border-radius: 10px; margin-bottom: 3em;">
+  <h2 style="color: #ffffff;">
+    <span style="color:#cccccc;">Princeton</span> <span style="color:#d078ff;">Creative Exercises</span> <span style="color:#f78c6b;">#31</span>
+  </h2>
+
+  <p>
+    🧭 <strong>Objective:</strong><br>
+    Illustrate <code>Math.sin</code>, <code>Math.cos</code>, <code>Math.tan</code>. Input angle in degrees via command-line arg; convert with <code>Math.toRadians</code>.
+  </p>
+
+  <h3 style="color:#d078ff;">💡 Java Code</h3>
+  <div class="code-box">
+    <pre><code>
+// Trig.java
+public class Trig {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java Trig <angleDegrees>");
+            return;
+        }
+
+        double deg = Double.parseDouble(args[0]);
+        double rad = Math.toRadians(deg);
+
+        double s = Math.sin(rad);
+        double c = Math.cos(rad);
+        double t = Math.tan(rad);
+
+        System.out.println("Angle (deg): " + deg);
+        System.out.println("Angle (rad): " + rad);
+        System.out.println("sin(theta): " + s);
+        System.out.println("cos(theta): " + c);
+        System.out.println("tan(theta): " + t);
+
+        double identity = s*s + c*c; // should be ~1
+        System.out.println("sin^2 + cos^2 = " + identity);
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+
 
 </body>
 </html>
