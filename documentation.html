@@ -360,58 +360,108 @@ System.out.println(Integer.MAX_VALUE + 1); // ?</code></pre></div>
 </html>
 
 <!-- ===================== Fivable Notes — Unit 1 ===================== -->
-<section class="project-section">
-  <div class="prompt-box" style="width: 100%;">
-    <h2 style="color:#d078ff;"> Unit 1 Notes from Fivable</h2>
-    <ul class="project-list">
+<p class="welcome-text">Fivable Notes — Unit 1</p>
 
-      <!-- 1.9 Method Signatures & Procedural Abstraction -->
-      <li><a href="#">1.9 — Method signature = method name + ordered parameter types (return type is NOT part of it).</a></li>
-      <li><a href="#">Overloading works only if signatures differ: <code>substring(int,int)</code> ≠ <code>substring(int)</code>; you cannot overload by return type.</a></li>
-      <li><a href="#">Parameters (in header) are placeholders; arguments (in call) are actual values. No-param methods still require <code>()</code>.</a></li>
-      <li><a href="#">Void vs non-void: void performs an action; non-void returns a value you can store/use.</a></li>
-      <li><a href="#">Procedural abstraction: use a method by knowing “what it does,” not its internal steps.</a></li>
-      <p><code>// Overload by parameter list, not by return type<br>int add(int a,int b){return a+b;}<br>double add(double a,double b){return a+b;}</code></p>
+<!-- Table of contents -->
+<p class="subtitle2">Contents</p>
+<ul>
+  <li><a class="course-link" href="#u1-19">1.9 Method Signatures & Procedural Abstraction</a></li>
+  <li><a class="course-link" href="#u1-110">1.10 Static (Class) Methods</a></li>
+  <li><a class="course-link" href="#u1-111">1.11 Math Class</a></li>
+  <li><a class="course-link" href="#u1-113">1.13 Object Creation & Constructors</a></li>
+  <li><a class="course-link" href="#u1-114">1.14 Calling Instance Methods</a></li>
+  <li><a class="course-link" href="#u1-115">1.15 String Manipulation</a></li>
+</ul>
 
-      <!-- 1.10 Static (Class) Methods -->
-      <li><a href="#">1.10 — <b>static</b> methods belong to the class; call with <code>ClassName.method()</code> (no object needed).</a></li>
-      <li><a href="#">Use static when no instance state is needed (utilities, conversions, factories).</a></li>
-      <li><a href="#">Static methods cannot access instance fields/methods directly (no implicit <code>this</code>).</a></li>
-      <p><code>// Examples<br>double r = Math.sqrt(25);<br>int n = Integer.parseInt("42");</code></p>
+<!-- 1.9 -->
+<p id="u1-19" class="subtitle2">1.9 — Method Signatures & Procedural Abstraction</p>
+<p class="subtitle">
+  A method’s signature = its <b>name + parameter types (order matters)</b>. Return type is not included.  
+  Supports <b>overloading</b> if signatures differ. Parameters = placeholders; arguments = actual values.  
+  Void methods perform actions; non-void return values. Procedural abstraction = use a method by what it does, not how it works.
+</p>
+<div class="code-box"><pre><code>class Sig {
+  int add(int a, int b) { return a + b; }          // add(int,int)
+  double add(double a, double b) { return a + b; } // add(double,double)
+  void greet(String name) { System.out.println("Hi " + name); }
+}</code></pre></div>
 
-      <!-- 1.11 Math Class -->
-      <li><a href="#">1.11 — <code>Math</code> is in <code>java.lang</code> (auto available). Common: <code>abs</code>, <code>pow</code>, <code>sqrt</code>, <code>random</code> (all static).</a></li>
-      <li><a href="#">Ranges: <code>Math.random()</code> ∈ [0.0,1.0). For [min,max] int → <code>(int)(Math.random()*(max-min+1))+min</code>.</a></li>
-      <li><a href="#">Pitfalls: off-by-one in ranges; mixing <code>int</code>/<code>double</code>; overflow when casting big <code>pow</code> results to <code>int</code>.</a></li>
-      <p><code>// Dice 1–6<br>int die = (int)(Math.random()*6) + 1;</code></p>
+<!-- 1.10 -->
+<p id="u1-110" class="subtitle2">1.10 — Static (Class) Methods</p>
+<p class="subtitle">
+  <b>Static methods</b> belong to the class, not an object.  
+  Call with <code>ClassName.method()</code>.  
+  Useful for utilities (math, conversions). Cannot access instance vars or use <code>this</code>.
+</p>
+<div class="code-box"><pre><code>class Util {
+  static int max(int a, int b) { return (a > b) ? a : b; }
+  public static void main(String[] a){ System.out.println(Util.max(7, 9)); }
+}</code></pre></div>
 
-      <!-- 1.13 Object Creation & Constructors -->
-      <li><a href="#">1.13 — <code>new</code> allocates memory, calls a matching constructor (by parameter types/order), returns an object reference.</a></li>
-      <li><a href="#">Each object gets its own instance variables; methods are shared by class definition (“blueprint”).</a></li>
-      <li><a href="#">Multiple constructors = different initialization paths; Java selects by signature.</a></li>
-      <p><code>Student s = new Student("Sarah",16);</code></p>
+<!-- 1.11 -->
+<p id="u1-111" class="subtitle2">1.11 — Math Class</p>
+<p class="subtitle">
+  <code>Math</code> provides static methods: <code>abs()</code>, <code>pow()</code>, <code>sqrt()</code>, <code>random()</code>.  
+  <code>Math.random()</code> → double [0.0,1.0). Scale with multiply + offset.  
+  Common pitfalls: off-by-one random ranges, int overflow on <code>pow()</code>.
+</p>
+<div class="code-box"><pre><code>class Dice {
+  public static void main(String[] a){
+    int die = (int)(Math.random()*6) + 1;   // 1–6
+    double r = Math.sqrt(49);               // 7.0
+    System.out.println(die + " " + r);
+  }
+}</code></pre></div>
 
-      <!-- 1.14 Calling Instance Methods -->
-      <li><a href="#">1.14 — Instance methods require an object: <code>obj.method()</code>; they use that object’s state.</a></li>
-      <li><a href="#">Null safety: calling a method on <code>null</code> → <code>NullPointerException</code>. Always initialize or check for <code>null</code>.</a></li>
-      <li><a href="#">Differentiate static vs instance: <code>Math.sqrt(…)</code> (class) vs <code>str.length()</code> (object).</a></li>
-      <p><code>String msg = "Hello"; int len = msg.length(); // instance method</code></p>
+<!-- 1.13 -->
+<p id="u1-113" class="subtitle2">1.13 — Object Creation & Constructors</p>
+<p class="subtitle">
+  Use <code>new</code> to allocate memory + call a constructor.  
+  Each object has its own instance variables.  
+  Constructors can be overloaded with different parameter lists.  
+  Beware: assigning one object to another copies the reference, not the object.
+</p>
+<div class="code-box"><pre><code>class Student {
+  String name; int age;
+  Student(String n, int a){ name=n; age=a; }
+}
+class Demo {
+  public static void main(String[] a){ Student s = new Student("Sarah",16); }
+}</code></pre></div>
 
-      <!-- 1.15 String Manipulation (Most Important) -->
-      <li><a href="#">1.15 — Strings are <b>immutable</b>. Methods return new Strings; the original is unchanged unless you reassign.</a></li>
-      <li><a href="#">Indexing is 0-based; last index = <code>length()-1</code>. <code>substring(a,b)</code> includes <code>a</code>, excludes <code>b</code>.</a></li>
-      <li><a href="#">Core methods: <code>length()</code>, <code>substring()</code>, <code>indexOf()</code> (−1 if not found), <code>equals()</code> (content), <code>compareTo()</code> (lexicographic), <code>toLowerCase()/toUpperCase()</code>.</a></li>
-      <li><a href="#">Concatenation with <code>+</code> auto-converts primitives/objects to String via <code>toString()</code>.</a></li>
-      <li><a href="#">Common errors: using <code>==</code> instead of <code>equals()</code>; off-by-one with <code>substring</code>; forgetting to capture returned Strings.</a></li>
-      <p><code>// Parse email<br>String e="user@school.edu"; int at=e.indexOf("@");<br>String u=e.substring(0,at); String d=e.substring(at+1);</code></p>
-      <p><code>// Immutability & comparison<br>String a="hello", b=new String("hello");<br>a=a.toUpperCase(); // "HELLO"<br>boolean same=a.equals(b); // true for content</code></p>
+<!-- 1.14 -->
+<p id="u1-114" class="subtitle2">1.14 — Calling Instance Methods</p>
+<p class="subtitle">
+  Instance methods belong to objects → call with dot operator.  
+  Depend on the object’s state.  
+  Calling on <code>null</code> throws <b>NullPointerException</b>.  
+  Different from static methods, which belong to the class.
+</p>
+<div class="code-box"><pre><code>class Dog {
+  String name; Dog(String n){ name=n; }
+  String desc(){ return name + " is great"; }
+}
+class Park {
+  public static void main(String[] a){ System.out.println(new Dog("Max").desc()); }
+}</code></pre></div>
 
-      <!-- AP Exam Focus -->
-      <li><a href="#">AP focus → Strings & methods: trace <code>substring</code> bounds, handle <code>indexOf</code>=−1, use <code>equals</code> (not <code>==</code>), capture return values, and know static vs instance call syntax.</a></li>
+<!-- 1.15 -->
+<p id="u1-115" class="subtitle2">1.15 — String Manipulation</p>
+<p class="subtitle">
+  Strings are <b>immutable</b>.  
+  Key methods: <code>length()</code>, <code>substring()</code>, <code>indexOf()</code>, <code>equals()</code>, <code>compareTo()</code>, case conversion.  
+  Concatenate with <code>+</code>.  
+  Pitfalls: using <code>==</code> instead of <code>equals()</code>, off-by-one with <code>substring</code>, forgetting to store return value.
+</p>
+<div class="code-box"><pre><code>class S {
+  public static void main(String[] a){
+    String e="user@school.edu";
+    int at=e.indexOf("@");
+    String user=e.substring(0,at), domain=e.substring(at+1);
+    System.out.println(user + " | " + domain); // user | school.edu
+  }
+}</code></pre></div>
 
-    </ul>
-  </div>
-</section>
 
 
 </body>
